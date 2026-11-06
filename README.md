@@ -1,4 +1,4 @@
-# regex-lens 🔬
+# regex-lens
 
 [![CI](https://github.com/dani-s-h007/regex-lens/actions/workflows/ci.yml/badge.svg)](https://github.com/dani-s-h007/regex-lens/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -11,7 +11,7 @@ Complex regular expressions in production systems are notorious for triggering *
 
 ---
 
-## ✨ Features
+## Features
 
 - **ReDoS Vulnerability Scanner**: Catches nested quantifiers `(a+)+`, `([a-z]+)*`, and ambiguous alternations before they freeze your servers.
 - **Natural Language Explainer**: Demystifies character classes, lookaheads, anchors, and capturing groups.
@@ -20,7 +20,7 @@ Complex regular expressions in production systems are notorious for triggering *
 
 ---
 
-## 🚀 Installation & Demo
+## Installation & Demo
 
 ```bash
 # Run on-demand with npx
@@ -32,7 +32,7 @@ npm run demo
 
 ---
 
-## 🛠️ CLI Usage
+## CLI Usage
 
 ```bash
 # Explain a regex pattern:
@@ -50,7 +50,7 @@ regex-lens "([a-z]+)+" --json
 
 ---
 
-## 💻 Programmatic TypeScript API
+## Programmatic TypeScript API
 
 ```typescript
 import { explainRegex, scanForRedos } from 'regex-lens';
@@ -63,7 +63,7 @@ if (redos.isVulnerable) {
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 npm test
@@ -71,7 +71,7 @@ npm test
 
 ---
 
-## 📄 License
+## License
 
 MIT © Essentials Toolkit Authors
 

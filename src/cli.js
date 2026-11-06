@@ -68,15 +68,15 @@ export async function runCli(argv = process.argv.slice(2)) {
     return 0;
   }
 
-  console.log('\n🔬 regex-lens - Pattern Explainer & ReDoS Scanner');
+  console.log('\nregex-lens - Pattern Explainer & ReDoS Scanner');
   console.log('============================================================');
   console.log(`Pattern:   \x1b[36m/${patternStr}/\x1b[0m`);
-  console.log(`ReDoS Risk: ${redos.isVulnerable ? '\x1b[31m⚠️ VULNERABLE (Exponential Backtracking)\x1b[0m' : '\x1b[32m✅ SAFE\x1b[0m'}\n`);
+  console.log(`ReDoS Risk: ${redos.isVulnerable ? '\x1b[31m[WARN] VULNERABLE (Exponential Backtracking)\x1b[0m' : '\x1b[32m[OK] SAFE\x1b[0m'}\n`);
 
   if (redos.isVulnerable) {
     for (const issue of redos.issues) {
-      console.log(`🚨 \x1b[31m${issue.rule}\x1b[0m in "${issue.hunk}"`);
-      console.log(`   👉 Fix: ${issue.recommendation}\n`);
+      console.log(`[ALERT] \x1b[31m${issue.rule}\x1b[0m in "${issue.hunk}"`);
+      console.log(`   -> Fix: ${issue.recommendation}\n`);
     }
   }
 
@@ -91,7 +91,7 @@ export async function runCli(argv = process.argv.slice(2)) {
   if (matchResult) {
     console.log('Test Evaluation:');
     console.log(`  Input String: "${values.test}"`);
-    console.log(`  Matched:      ${matchResult.matched ? '✅ YES' : '❌ NO'}`);
+    console.log(`  Matched:      ${matchResult.matched ? 'YES [OK]' : 'NO [FAIL]'}`);
     console.log(`  Exec Time:    ${matchResult.durationUs} µs`);
     if (matchResult.groups && matchResult.groups.length > 0) {
       console.log(`  Captures:     [${matchResult.groups.join(', ')}]`);
